@@ -1,10 +1,13 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.scss";
+import ImgGallery from "./components/ImgGallery";
 
 function App() {
   return (
     <>
+      <ImgGallery />
+      <hr />
       <h1>Image Gallery</h1>
       <div className="gallery">
         <div className="img-container">
