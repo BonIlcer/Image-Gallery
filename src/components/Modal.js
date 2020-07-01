@@ -8,9 +8,16 @@ function Modal() {
     setModalClass("modal open");
     setImgClass("full-img open");
   }
+  function closeModal(e) {
+    if (e.target.classList.contains("modal")) {
+      setModalClass("modal");
+      setImgClass("full-img");
+    }
+  }
+
   return (
     <>
-      <div className={modalClass}>
+      <div className={modalClass} onClick={closeModal}>
         <img src={imgSrc} alt="img" className={imgClass} />
       </div>
       <button onClick={showModal}>click</button>

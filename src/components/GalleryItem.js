@@ -4,7 +4,7 @@ import "../App.scss";
 function GalleryItem({ preview, full }) {
   return (
     <div className="img-container">
-      <img src={preview} alt="img" dataOriginal={full} />
+      <img src={preview} alt="img" dataoriginal={full} />
     </div>
   );
 }

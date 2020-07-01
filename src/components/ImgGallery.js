@@ -4,8 +4,8 @@ import data from "../imgData";
 import Modal from "./Modal";
 
 function ImgGallery() {
-  const galleryItems = data.map((item) => (
-    <GalleryItem preview={item.preview} full={item.full} />
+  const galleryItems = data.map((item, index) => (
+    <GalleryItem key={index} preview={item.preview} full={item.full} />
   ));
 
   return (
