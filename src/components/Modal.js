@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Modal() {
-  const imgSrc = "./img/2full.jpg";
-  const [modalClass, setModalClass] = useState("modal");
-  const [imgClass, setImgClass] = useState("full-img");
-  function showModal() {
-    setModalClass("modal open");
-    setImgClass("full-img open");
-  }
+function Modal({ imgSrc, modalMode, setMode }) {
+  const modalClass = modalMode ? "modal open" : "modal";
+  const imgClass = modalMode ? "full-img open" : "full-img";
+
   function closeModal(e) {
+    //console.log(e.target.classList);
     if (e.target.classList.contains("modal")) {
-      setModalClass("modal");
-      setImgClass("full-img");
+      setMode(false);
     }
   }
 
@@ -20,7 +16,6 @@ function Modal() {
       <div className={modalClass} onClick={closeModal}>
         <img src={imgSrc} alt="img" className={imgClass} />
       </div>
-      <button onClick={showModal}>click</button>
     </>
   );
 }
